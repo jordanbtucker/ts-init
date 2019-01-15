@@ -14,7 +14,6 @@
   "scripts": {
     "build": "rimraf lib && tsc",
     "coverage": "npm run build && npm run tap & tap --coverage-report=html",
-    "debug": "cross-env DEBUG=* npm start",
     "lint": "npm run tslint && npm run eslint",
     "tslint": "tslint --fix src/**",
     "eslint": "eslint --fix .",
@@ -34,11 +33,9 @@
   },
   "homepage": "https://github.com/jordanbtucker/ts-init#readme",
   "dependencies": {
-    "debug": "^4.1.1",
     "dotenv": "^6.2.0"
   },
   "devDependencies": {
-    "@types/debug": "0.0.31",
     "@types/node": "^10.12.18",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.0",
