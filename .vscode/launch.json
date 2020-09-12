@@ -8,9 +8,9 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}\\lib\\index.js",
-      "preLaunchTask": "npm: compile",
-      "skipFiles": ["node_modules/**", "<node_internals>/**"]
+      "program": "${workspaceFolder}\\src\\index.ts",
+      "skipFiles": ["node_modules/**", "<node_internals>/**"],
+      "args": ["-r", "ts-node/register"]
     }
   ]
 }
