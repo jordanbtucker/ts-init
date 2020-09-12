@@ -1,7 +1,6 @@
-import App = require('./app')
+import {main} from './main'
 
-const app = new App()
-app.run().catch(err => {
+main().catch(err => {
   console.error(err)
   process.exitCode = 1
 })
