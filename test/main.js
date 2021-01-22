@@ -1,19 +1,18 @@
 const sinon = require('sinon')
-const t = require('tap')
+const {default: test} = require('ava')
 
 const {name} = require('../lib/config')
 const {main} = require('../lib/main')
 
-t.test('main', async t => {
-  await t.test(`logs 'Hello, $NAME!'`, async () => {
-    const message = `Hello, ${name}!`
+test(`logs 'Hello, $NAME!'`, async t => {
+  const message = `Hello, ${name}!`
 
-    const mock = sinon.mock(console)
-    mock.expects('log').once().withExactArgs(message)
+  const mock = sinon.mock(console)
+  mock.expects('log').once().withExactArgs(message)
 
-    await main()
+  await main()
 
-    mock.verify()
-    mock.restore()
-  })
+  mock.verify()
+  mock.restore()
+  t.pass()
 })
