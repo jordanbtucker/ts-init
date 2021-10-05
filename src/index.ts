@@ -1,6 +1,4 @@
-import {main} from './main'
+import greet from './greet'
 
-main().catch(err => {
-  console.error(err)
-  process.exitCode = 1
-})
+export {greet}
+export default greet

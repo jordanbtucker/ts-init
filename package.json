@@ -6,52 +6,48 @@
   "main": "lib",
   "types": "lib/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "engines": {
-    "node": "^10.9 || ^12 || >=14"
+    "node": "^12 || ^14 || >=16",
+    "npm": ">=7"
   },
   "scripts": {
     "ava": "ava test/*",
     "build": "run-s clean compile",
-    "clean": "rimraf lib",
-    "compile": "tsc",
+    "clean": "tsc --build --clean",
+    "compile": "tsc --build",
     "coverage": "run-s -c spec nyc-report",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx --fix .",
     "lint": "run-s eslint prettier",
     "nyc": "nyc npm run ava",
     "nyc-report": "nyc report --reporter=html",
-    "prettier": "prettier --loglevel warn --write **/*.{babelrc,css,html,js,json,jsx,md,scss,ts,tsx,yml}",
+    "prettier": "prettier --loglevel warn -w .",
+    "prepare": "husky install",
     "preversion": "npm test",
     "spec": "run-s build nyc",
-    "start": "node lib",
-    "test": "run-s build lint nyc"
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0"
+    "test": "run-s lint spec"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.0.1",
-    "@commitlint/config-conventional": "^12.0.1",
-    "@types/dotenv": "^8.2.0",
-    "@types/node": "^14.14.31",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@tsconfig/node12": "^1.0.9",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "ava": "^3.15.0",
-    "eslint": "^7.21.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.0",
     "npm-run-all": "^4.1.5",
     "nyc": "^15.1.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "sinon": "^9.2.4",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
   }
 }

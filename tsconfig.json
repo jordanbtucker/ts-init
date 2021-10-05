@@ -1,11 +1,10 @@
 {
+  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "module": "CommonJS",
+    "composite": true,
     "outDir": "lib",
-    "sourceMap": true,
-    "strict": true,
-    "target": "ES2018"
+    "rootDir": "src",
+    "sourceMap": true
   },
   "include": ["src"]
 }
