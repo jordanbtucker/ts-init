@@ -26,7 +26,8 @@
     "prepare": "husky install",
     "preversion": "npm test",
     "spec": "run-s build nyc",
-    "test": "run-s lint spec"
+    "test": "run-s lint spec",
+    "watch": "tsc --watch"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.0",
