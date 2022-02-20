@@ -6,5 +6,30 @@
     "plugin:promise/recommended",
     "plugin:node/recommended",
     "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["src/**/*.{ts,tsx}"],
+      "extends": [
+        "plugin:import/typescript",
+        "plugin:node/recommended-module",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "settings": {
+        "node": {
+          "convertPath": [
+            {
+              "include": ["src/**/*.ts", "src/**/*.tsx"],
+              "replace": ["^src/(.+)\\.{ts,tsx}$", "lib/$1.js"]
+            }
+          ],
+          "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
+        }
+      }
+    }
   ]
 }
