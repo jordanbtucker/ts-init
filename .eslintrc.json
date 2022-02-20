@@ -9,18 +9,26 @@
   ],
   "overrides": [
     {
-      "files": ["src/**/*.{ts,tsx}"],
+      "files": ["src/**/*.{ts,tsx}", "test/**/*.{ts,tsx}"],
       "extends": [
         "plugin:import/typescript",
         "plugin:node/recommended-module",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
-      "parserOptions": {
-        "project": "tsconfig.json"
-      },
       "rules": {
         "@typescript-eslint/explicit-function-return-type": ["error"]
+      },
+      "settings": {
+        "node": {
+          "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
+        }
+      }
+    },
+    {
+      "files": ["src/**/*.{ts,tsx}"],
+      "parserOptions": {
+        "project": "tsconfig.json"
       },
       "settings": {
         "node": {
@@ -29,9 +37,18 @@
               "include": ["src/**/*.ts", "src/**/*.tsx"],
               "replace": ["^src/(.+)\\.{ts,tsx}$", "lib/$1.js"]
             }
-          ],
-          "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
+          ]
         }
+      }
+    },
+    {
+      "files": ["test/**/*.{ts,tsx}"],
+      "parserOptions": {
+        "project": "test/tsconfig.json"
+      },
+      "rules": {
+        "@typescript-eslint/require-await": "off",
+        "@typescript-eslint/no-floating-promises": "off"
       }
     }
   ]
