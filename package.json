@@ -6,7 +6,8 @@
   "main": "lib",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "engines": {
     "node": "^12 || ^14 || >=16",
