@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Starting point for TypeScript projects",
   "private": true,
-  "main": "lib",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib",
