@@ -19,6 +19,9 @@
       "parserOptions": {
         "project": "tsconfig.json"
       },
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      },
       "settings": {
         "node": {
           "convertPath": [
