@@ -17,7 +17,7 @@
           "replace": ["^src/(.+)\\.tsx?$", "lib/$1.js"]
         }
       ],
-      "tryExtensions": [".ts", ".tsx", ".js", ".json", ".node"]
+      "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
     }
   }
 }
