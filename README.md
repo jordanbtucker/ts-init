@@ -1,3 +1,3 @@
 # ts-init
 
-Starting point for TypeScript projects
+A starting point for TypeScript projects.

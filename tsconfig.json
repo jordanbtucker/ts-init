@@ -1,10 +1,5 @@
 {
-  "extends": "@tsconfig/node12/tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "outDir": "lib",
-    "rootDir": "src",
-    "sourceMap": true
-  },
-  "include": ["src"]
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "files": [],
+  "references": [{"path": "src"}, {"path": "test"}]
 }
