@@ -2,7 +2,44 @@
   "root": true,
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended",
+    "plugin:n/recommended",
     "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "src/**"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript",
+        "plugin:n/recommended-module",
+        "prettier"
+      ],
+      "parserOptions": {
+        "project": "tsconfig.eslint.json"
+      },
+      "rules": {
+        "n/no-missing-import": "off",
+        "n/no-unsupported-features/es-syntax": "off"
+      },
+      "settings": {
+        "import/resolver": "typescript"
+      }
+    },
+    {
+      "files": ["src/**"],
+      "parserOptions": {
+        "project": "tsconfig.json"
+      }
+    },
+    {
+      "files": ["test/**"],
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/require-await": "off"
+      }
+    }
   ]
 }

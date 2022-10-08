@@ -1,5 +1,10 @@
 {
   "extends": "@tsconfig/node14/tsconfig.json",
-  "files": [],
-  "references": [{"path": "src"}, {"path": "test"}]
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "lib/cjs",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src"]
 }

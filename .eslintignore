@@ -1,4 +1,5 @@
 /.nyc_output
 /coverage
-/lib
+/lib/*
+!/lib/node
 /tap-snapshots
