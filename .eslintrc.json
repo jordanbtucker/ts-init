@@ -9,7 +9,7 @@
   ],
   "overrides": [
     {
-      "files": ["*.ts", "src/**"],
+      "files": ["**/*.ts"],
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -22,20 +22,21 @@
       },
       "rules": {
         "n/no-missing-import": "off",
-        "n/no-unsupported-features/es-syntax": "off"
+        "n/no-unsupported-features/es-syntax": "off",
+        "@typescript-eslint/explicit-function-return-type": "error"
       },
       "settings": {
         "import/resolver": "typescript"
       }
     },
     {
-      "files": ["src/**"],
+      "files": ["src/**/*.ts"],
       "parserOptions": {
         "project": "tsconfig.json"
       }
     },
     {
-      "files": ["test/**"],
+      "files": ["test/**/*.ts"],
       "rules": {
         "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/require-await": "off"
